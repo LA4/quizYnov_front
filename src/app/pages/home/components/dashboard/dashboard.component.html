@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    @for (q of quiz; track q.id) {
+
+      <li>
+        <div>
+          <a [routerLink]="['/quiz',q.id]">acces to quiz</a>
+          <span>{{ q.name }}</span>
+          <span>{{ q.category }}</span>
+          <span>{{ q.createAt }}</span>
+          <span>{{ q.difficulty }}</span>
+        </div>
+        <div>
+          <span>{{ q.description }}</span>
+          <span>{{ q.question }}</span>
+        </div>
+      </li>
+    }
+  </ul>
+</div>
