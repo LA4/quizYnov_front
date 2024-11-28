@@ -2,10 +2,13 @@ import {Component, input} from '@angular/core';
 import {QuizService} from '../../business/services/quiz.service';
 import {Quiz} from '../../business/models/quiz.model';
 import {Subscription} from 'rxjs';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
-  imports: [],
+  imports: [
+    RouterOutlet
+  ],
   templateUrl: './quiz.page.html',
   styleUrl: './quiz.page.css'
 })
