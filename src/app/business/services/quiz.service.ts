@@ -18,7 +18,7 @@ export class QuizService {
       .get<QuizDto[]>("http://localhost:5001/api/quizzes")
       .pipe(
         map(dtos => {
-          return dtos.map(d => this.mapper.fromDto(d))
+          return dtos.map(q => this.mapper.fromDto(q))
         })
       )
   }
@@ -30,4 +30,5 @@ export class QuizService {
         map(dto => this.mapper.fromDto(dto))
       )
   }
+
 }

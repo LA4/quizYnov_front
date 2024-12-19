@@ -4,13 +4,15 @@ import {Quiz} from '../models/quiz.model';
 
 @Injectable({providedIn: 'root'})
 export class QuizMapper {
+
   public fromDto(dto: QuizDto): Quiz {
-    const {createAt, ...restDto} = dto;
-    return {...restDto, createAt: new Date(createAt)}
+    const {createdAt, categoryName, ...restDto} = dto;
+
+    return {...restDto, category: categoryName, createAt: new Date(createdAt)}
   }
 
   public toDto(data: Quiz): QuizDto {
-    const {createAt, ...restDto} = data;
-    return {...restDto, createAt: createAt.toISOString()}
+    const {createAt, category, ...restDto} = data;
+    return {...restDto, categoryName: category, createdAt: createAt.toISOString()}
   }
 }

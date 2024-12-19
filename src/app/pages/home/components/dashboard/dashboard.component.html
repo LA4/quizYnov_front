@@ -2,11 +2,12 @@
   <ul>
     @for (q of quiz; track q.id) {
 
-      <li>
-        <div>
-          <a [routerLink]="['/quiz',q.id]">acces to quiz</a>
+      <li style="display:flex; margin: auto; justify-content: center; align-items: center ">
+        <div
+          style="display:flex; flex-direction: column; border:1px solid rgba(20,20,20,0.8); margin: 1rem;padding: 1rem">
+          <a [routerLink]="['/quiz',q.id]">access to quiz</a>
           <span>{{ q.name }}</span>
-          <span>{{ q.category }}</span>
+          <span>category : {{ q.category }}</span>
           <span>{{ q.createAt }}</span>
           <span>{{ q.difficulty }}</span>
         </div>

@@ -1,5 +1,5 @@
 export interface Quiz {
-  readonly  id: string
+  readonly id: string
   readonly name: string
   readonly description: string
   readonly category: string

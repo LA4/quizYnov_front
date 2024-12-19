@@ -7,27 +7,33 @@ import {RouterLink} from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   imports: [
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  title = 'Quiz';
   protected quiz: Quiz[] | null = null;
-  private subscription?: Subscription;
+  private quizSubscription?: Subscription;
 
-  constructor(private readonly quizService: QuizService) {
+  constructor(
+    private readonly quizService: QuizService,
+  ) {
   }
 
   public ngOnInit() {
-    this.subscription = this.quizService.getQuizzes().subscribe(quizzes => {
-      this.quiz = quizzes
-    })
+    this.quizSubscription = this.quizService
+      .getQuizzes()
+      .subscribe(quizzes => {
+        console.log(quizzes)
+        this.quiz = quizzes
+      })
+
   }
 
+
   public ngOnDestroy() {
-    this.subscription?.unsubscribe();
+    this.quizSubscription?.unsubscribe();
   }
 }
