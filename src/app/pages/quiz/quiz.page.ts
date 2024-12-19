@@ -21,8 +21,11 @@ export class QuizPage {
   }
 
   public ngOnInit() {
-    this.subscription = this.quizService.getQuiz(this.id()).subscribe(quiz => {
-      this.quiz = quiz
-    })
+    this.subscription = this.quizService
+      .getQuiz(this.id())
+      .subscribe(quiz => {
+        this.quiz = quiz
+        console.log(quiz)
+      })
   }
 }

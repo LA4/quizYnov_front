@@ -1,21 +1,16 @@
 <div>
-  <ul>
+  <ul class="card-list">
     @for (q of quiz; track q.id) {
 
-      <li style="display:flex; margin: auto; justify-content: center; align-items: center ">
-        <div
-          style="display:flex; flex-direction: column; border:1px solid rgba(20,20,20,0.8); margin: 1rem;padding: 1rem">
-          <a [routerLink]="['/quiz',q.id]">access to quiz</a>
-          <span>{{ q.name }}</span>
-          <span>category : {{ q.category }}</span>
-          <span>{{ q.createAt }}</span>
-          <span>{{ q.difficulty }}</span>
-        </div>
-        <div>
-          <span>{{ q.description }}</span>
-          <span>{{ q.question }}</span>
-        </div>
-      </li>
+      <a [routerLink]="['/quiz',q.id]">
+        <li class="card-item">
+          <div>
+            <span>{{ q.name }}</span>
+            <span>category : {{ q.category }}</span>
+            <span>{{ q.difficulty }}</span>
+          </div>
+        </li>
+      </a>
     }
   </ul>
 </div>
