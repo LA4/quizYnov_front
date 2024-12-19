@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  --main: #49b6a4;
+  --dark: #0f2421;
+  font-family: Calibri, sans-serif;
+ 
+}
