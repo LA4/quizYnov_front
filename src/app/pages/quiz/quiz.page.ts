@@ -3,11 +3,14 @@ import {QuizService} from '../../business/services/quiz.service';
 import {Quiz} from '../../business/models/quiz.model';
 import {Subscription} from 'rxjs';
 import {RouterOutlet} from '@angular/router';
+import {DatePipe, TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-quiz',
   imports: [
-    RouterOutlet
+    RouterOutlet,
+    DatePipe,
+    TitleCasePipe
   ],
   templateUrl: './quiz.page.html',
   styleUrl: './quiz.page.css'

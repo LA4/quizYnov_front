@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px auto;
+  padding: 1rem;
+  width: 20rem;
+  gap: 1rem;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.6) 0px 4px 8px 0px;
+
+}
+
+.container-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.header-details {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--main);
+}

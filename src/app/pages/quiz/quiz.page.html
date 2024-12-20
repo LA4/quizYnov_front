@@ -1,11 +1,16 @@
-<div>
-  {{ quiz?.name }}
-</div>
-<div>
-  {{ quiz?.description }}
-  {{ quiz?.difficulty }}
-  {{ quiz?.createAt }}
-</div>
+<main class="container">
+  <div>
+    <h4>Question n° {{ quiz?.name }}</h4>
+  </div>
+  <div class="container-details">
+    <div class="header-details">
+      {{ quiz?.name }}
+      <span>difficultée : {{ quiz?.difficulty }}</span>
+    </div>
+    <span>{{ quiz?.description }}</span>
+    <span>{{ quiz?.createAt | date:'dd/MM/yyyy' }}</span>
+  </div>
 
-<button>commencer</button>
+  <button>commencer</button>
+</main>
 <router-outlet></router-outlet>

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main);
+  width: auto;
+  height: 100vh;
+  margin-right: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.6) 0px 4px 8px 0px;
+
+}
+
+.container > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--dark);
+  padding: 1rem;
+  width: 100%;
+}
+
+a:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #49b6a4aa;
+}
