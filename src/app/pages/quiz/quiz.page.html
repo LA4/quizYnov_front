@@ -11,6 +11,9 @@
     <span>{{ quiz?.createAt | date:'dd/MM/yyyy' }}</span>
   </div>
 
-  <button>commencer</button>
+  <button (click)="getQuestions()">commencer</button>
+  @if (questions != null) {
+    {{ showOneQuestion(actualQuestion)?.question }}
+  }
 </main>
 <router-outlet></router-outlet>
