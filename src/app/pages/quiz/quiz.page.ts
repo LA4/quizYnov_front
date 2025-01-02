@@ -33,7 +33,6 @@ export class QuizPage {
       .getQuiz(this.id())
       .subscribe(quiz => {
         this.quiz = quiz
-        console.log(quiz)
       })
   }
 
@@ -53,7 +52,7 @@ export class QuizPage {
       .getQuestions()
       .subscribe(questions => {
         this.questions = questions
-        console.log(this.questions)
+        console.log("get question:",this.questions)
       })
   }
 

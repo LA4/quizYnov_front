@@ -21,5 +21,13 @@ export class QuestionService {
           return questionsDtos.map(q => this.mapper.fromDto(q));
         })
       )
+  } public getQuestionsByCategory(categoryId: string): Observable<Question[]> {
+    return this.client
+      .get<QuestionDto[]>(`http://localhost:5001/api/questions/${categoryId}`)
+      .pipe(
+        map(questionsByIdDtos => {
+          return questionsByIdDtos.map(q => this.mapper.fromDto(q));
+        })
+      )
   }
 }
