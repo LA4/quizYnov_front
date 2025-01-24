@@ -1,6 +1,6 @@
 <main class="container">
   <div>
-    <h4>Question n° {{ quiz?.name }}</h4>
+    <h4>Question n° {{ quiz?.id }}</h4>
   </div>
   <div class="container-details">
     <div class="header-details">
@@ -12,8 +12,10 @@
   </div>
 
   <button (click)="getQuestions()">commencer</button>
-  @if (questions != null) {
-    {{ showOneQuestion(actualQuestion)?.question }}
+  @if (questions?.length > 0) {
+
+    <app-questions categoryId ={{quiz?.id}}></app-questions>
   }
+
 </main>
 <router-outlet></router-outlet>
