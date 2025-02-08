@@ -10,7 +10,7 @@ import {QuestionService} from '../../../../business/services/question.service';
   styleUrl: './questions.component.css'
 })
 export class QuestionsComponent implements OnInit, OnDestroy {
-  public readonly categoryId = input.required<string>()
+  public readonly categoryId = input.required<string | undefined>()
   protected questions: Question[] | null = null;
   private questionSubscription?: Subscription;
 
@@ -23,7 +23,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
     // this.questionSubscription = this.questionService
     //   .getQuestionsByCategory(categoryId)
     //   .subscribe()
-    console.log(this.categoryId)
+    console.log("question - categoryId :",this.categoryId)
   }
   public ngOnDestroy() {
     this.questionSubscription?.unsubscribe()

@@ -12,9 +12,8 @@
   </div>
 
   <button (click)="getQuestions()">commencer</button>
-  @if (questions?.length > 0) {
-
-    <app-questions categoryId ={{quiz?.id}}></app-questions>
+  @if (questions) {
+    <app-questions [categoryId] ="quiz?.category"></app-questions>
   }
 
 </main>

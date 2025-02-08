@@ -27,7 +27,10 @@ export class QuizService {
     return this.client
       .get<QuizDto>(`http://localhost:5001/api/quizzes/${id}`)
       .pipe(
-        map(dto => this.mapper.fromDto(dto))
+        map(dto => {
+          console.log("dto quiz:",dto);
+          return this.mapper.fromDto(dto)
+        })
       )
   }
 
