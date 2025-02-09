@@ -26,10 +26,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.quizSubscription = this.quizService
       .getQuizzes()
       .subscribe(quizzes => {
-        console.log(quizzes)
         this.quiz = quizzes
       })
-
   }
 
 

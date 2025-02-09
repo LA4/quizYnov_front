@@ -21,7 +21,7 @@ export class CategoryService {
       }))
   }
 
-  public getCategoryById(id: string): Observable<Category> {
+  public getCategoryById(id: number): Observable<Category> {
     return this.client
       .get<CategoryDto>(`http://localhost:5001/api/categories/${id}`)
       .pipe(map(categoryDto => this.categoryMapper.fromDto(categoryDto)))

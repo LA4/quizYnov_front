@@ -10,10 +10,10 @@
     <span>{{ quiz?.description }}</span>
     <span>{{ quiz?.createAt | date:'dd/MM/yyyy' }}</span>
   </div>
-
-  <button (click)="getQuestions()">commencer</button>
-  @if (questions) {
-    <app-questions [categoryId] ="quiz?.category"></app-questions>
+<span>Score {{score}}</span>
+  <button (click)="getQuestion()">commencer</button>
+  @if (actualQuestion != null) {
+    <app-questions (getScore) = "onScoreReceived($event)" [actualQuestion] = actualQuestion></app-questions>
   }
 
 </main>

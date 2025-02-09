@@ -26,6 +26,7 @@ export class QuestionService {
       .get<QuestionDto[]>(`http://localhost:5001/api/questions/${categoryId}`)
       .pipe(
         map(questionsByIdDtos => {
+          console.log("questions:",questionsByIdDtos);
           return questionsByIdDtos.map(q => this.mapper.fromDto(q));
         })
       )

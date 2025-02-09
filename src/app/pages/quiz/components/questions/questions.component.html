@@ -1,6 +1,10 @@
 <section>
-  <span>Question</span>
-  <div>
-  the question about : {{this.categoryId()}}
+  <span>Question : {{actualQuestion.question}}</span>
+  <div style="display:flex ; flex-direction:column">
+    <ul></ul>
+  @for(answer of actualQuestion.answers ;track answer.toString()){
+   <button (click)="getQuestionAnswer(actualQuestion.id, answer)"> {{answer}}</button>
+  }
   </div>
+{{isResponse}}
 </section>

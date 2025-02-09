@@ -4,10 +4,10 @@
 
       <a [routerLink]="['/quiz',q.id]">
         <li class="card-item">
-          <div>
-            <span>{{ q.name }}</span>
-            <span>category : {{ q.category }}</span>
-            <span>{{ q.difficulty }}</span>
+          <div class="card-container">
+            <span> Quiz:{{ q.name }}</span>
+            @if(q.category.name){<span >category : {{ q.category.name }}</span>}
+            <span> Difficultée: {{ q.difficulty }}</span>
           </div>
         </li>
       </a>
