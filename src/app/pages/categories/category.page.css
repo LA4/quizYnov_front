@@ -1,3 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background-color: #0f2421;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #f1ebeb;
+
+}
 .card-item {
   display: flex;
   height: auto;
@@ -17,7 +35,7 @@
   margin: 0 auto 1rem;
 }
 .card-container{
-  width: 100%;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,14 +45,6 @@
   margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-}
-.card-container h4{
-  background-color: var(--dark);
-  padding: .5rem;
-  border-radius: .5rem;
-  color: var(--white);
-  --box-shadow: rgba(43, 65, 25, 0.6) 0px 4px 8px 0px;
-
 }
 .card{
   display: flex;

@@ -24,16 +24,18 @@ export class QuizPage {
   protected quiz: Quiz | null = null;
   protected questions: Question[] | null = null;
   protected score: number = 0
+  protected endQuiz:boolean =false
 
   private subscription?: Subscription;
   private questionSubscription?: Subscription
   protected actualQuestion: Question | null = null;
-  private currentQuestionIndex: number=0;
+  protected currentQuestionIndex: number=0;
+  protected progression:number=0;
 
   constructor(
     private readonly quizService: QuizService,
     private readonly questionService: QuestionService,
-    private readonly router: Router
+    protected readonly router: Router
   ) {
   }
 
@@ -58,7 +60,11 @@ export class QuizPage {
       this.showQuestion(this.currentQuestionIndex);
     } else {
       this.actualQuestion = null;
-      this.router.navigate(['/']);
+      if(this.questions){
+
+      this.progression = Math.round((score / this.questions.length ) * 100);
+      }
+      this.endQuiz = true;
     }
   }
   public getQuestion() {
@@ -73,4 +79,9 @@ export class QuizPage {
     }
   }
 
+  public ngOnDestroy() {
+    this.questionSubscription?.unsubscribe()
+  }
+
+  protected readonly Math = Math;
 }

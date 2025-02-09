@@ -1,24 +1,27 @@
 .container {
   display: flex;
-  flex-direction: column;
-  background-color: var(--main);
+  background-color: var(--dark);
   width: auto;
-  height: 100vh;
+  height: 100%;
   margin-right: 1rem;
   box-shadow: rgba(100, 100, 111, 0.6) 0px 4px 8px 0px;
+  justify-content: center;
 
 }
 
 .container > a {
   display: flex;
+  color: var(--main);
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--dark);
   padding: 1rem;
-  width: 100%;
+  width: 50%;
+  transition: .3s ease-in-out;
+;
 }
 
 a:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-bottom: 10px solid var(--main);
   background-color: #49b6a4aa;
 }

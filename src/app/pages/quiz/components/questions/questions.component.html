@@ -1,10 +1,9 @@
 <section>
-  <span>Question : {{actualQuestion.question}}</span>
+  <span>Question :</span>
+  <h4 style="border: 1px solid var(--dark); padding: 1rem"> {{ actualQuestion.question }}</h4>
   <div style="display:flex ; flex-direction:column">
-    <ul></ul>
-  @for(answer of actualQuestion.answers ;track answer.toString()){
-   <button (click)="getQuestionAnswer(actualQuestion.id, answer)"> {{answer}}</button>
-  }
+    @for (answer of actualQuestion.answers; track answer.toString()) {
+      <button class="button-18"(click)="getQuestionAnswer(actualQuestion.id, answer)"> {{ answer }}</button>
+    }
   </div>
-{{isResponse}}
 </section>

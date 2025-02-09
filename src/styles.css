@@ -13,6 +13,7 @@ a {
 body {
   --main: #49b6a4;
   --dark: #0f2421;
+  --white: #F1F1F1 ;
   --box-shadow: rgba(100, 100, 111, 0.6) 0px 4px 8px 0px;
   font-family: Calibri, sans-serif;
 

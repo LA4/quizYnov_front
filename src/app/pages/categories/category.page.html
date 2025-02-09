@@ -1,0 +1,15 @@
+<main class="container">
+  <h1 class="title">Les categories</h1>
+  <ul class="card-list">
+    @for (q of quizzes; track q.id) {
+
+      <a [routerLink]="['/quiz',q.id]">
+        <li class="card-item">
+          <div class="card-container">
+            @if(q.category.name){<span >category : {{ q.category.name }}</span>}
+          </div>
+        </li>
+      </a>
+    }
+  </ul>
+</main>

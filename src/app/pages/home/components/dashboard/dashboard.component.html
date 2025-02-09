@@ -1,13 +1,13 @@
-<div>
+<div class="card">
   <ul class="card-list">
     @for (q of quiz; track q.id) {
 
       <a [routerLink]="['/quiz',q.id]">
         <li class="card-item">
           <div class="card-container">
-            <span> Quiz:{{ q.name }}</span>
-            @if(q.category.name){<span >category : {{ q.category.name }}</span>}
-            <span> Difficultée: {{ q.difficulty }}</span>
+            <h4> Quiz:{{ q.name }}</h4>
+            @if(q.category.name){<span style="text-decoration: underline;font-style: italic; margin: .5rem">category : {{ q.category.name }}</span>}
+            <span style="border: 1px solid var(--main) ;border-radius: .5rem; padding: .25rem ; margin: 1rem"> Difficultée: {{ q.difficulty }}</span>
           </div>
         </li>
       </a>

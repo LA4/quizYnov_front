@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit, OnDestroy {
   protected isResponse: boolean = false;
   private questionSubscription?: Subscription;
   private responseSubscription?: Subscription;
+
   @Input() actualQuestion!: Question;
   @Output() getScore = new EventEmitter<number>();
   private isGoodResponse: number =0;
@@ -25,9 +26,6 @@ export class QuestionsComponent implements OnInit, OnDestroy {
   ) {
   }
 
-  public ngOnInit() {
-
-  }
 
   public getQuestionAnswer(questionId: string, answer: string): void {
     this.responseService.getResponseByQuestionId(questionId, answer).subscribe({
@@ -45,6 +43,9 @@ export class QuestionsComponent implements OnInit, OnDestroy {
   public ngOnDestroy() {
     this.questionSubscription?.unsubscribe()
     this.responseSubscription?.unsubscribe()
+  }
+
+  ngOnInit(): void {
   }
 
 }
