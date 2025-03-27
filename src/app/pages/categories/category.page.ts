@@ -6,7 +6,7 @@ import {Subscription} from 'rxjs';
 import {Quiz} from '../../business/models/quiz.model';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-category-page',
   imports: [RouterLink],
   templateUrl: './category.page.html',
   styleUrl: './category.page.css'

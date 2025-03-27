@@ -15,7 +15,7 @@ export class QuizService {
 
   public getQuizzes(): Observable<Quiz[]> {
     return this.client
-      .get<QuizDto[]>("http://localhost:5001/api/quizzes")
+      .get<QuizDto[]>("https://localhost:5000/api/quizzes")
       .pipe(
         map(dtos => {
           console.log("dto quiz:",dtos);
@@ -27,7 +27,7 @@ export class QuizService {
 
   public getQuiz(id: string): Observable<Quiz> {
     return this.client
-      .get<QuizDto>(`http://localhost:5001/api/quizzes/${id}`)
+      .get<QuizDto>(`http://localhost:5000/api/quizzes/${id}`)
       .pipe(
         map(dto => {
           console.log("dto quiz:",dto);

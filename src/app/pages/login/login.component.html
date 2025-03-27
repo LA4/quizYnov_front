@@ -1,0 +1,25 @@
+<form style="display: flex;flex-direction:column;width: 500px;margin:50px auto ;justify-content: center;"
+      (ngSubmit)="handleSubmit($event)" #f="ngForm">
+  <fieldset>
+    <label for="username">Nom d'utilisateur
+    </label>
+    <input name="username" required minlength="4" id="username" type="text" #usernameinput="ngModel"
+           [(ngModel)]="userForm.username">
+  </fieldset>
+  @if (usernameinput.errors && usernameinput.dirty || usernameinput.touched) {
+    <p> error : {{ usernameinput.errors?.['minlength'] }}</p>
+  }
+  <fieldset>
+    <label for="password">Mot de passe</label>
+    <input name="password" required minlength="8" id="password" type="password" #passwordinput="ngModel"
+           [(ngModel)]="userForm.password">
+  </fieldset>
+  @if (passwordinput.errors && passwordinput.dirty || passwordinput.touched) {
+    <p> error : pas cool</p>
+  }
+  <fieldset>
+    <button [disabled]="f.invalid" style="margin: 50px; display: flex" type="submit">valider</button>
+  </fieldset>
+  <pre>{{usernameinput.errors | json}}</pre>
+  <pre>{{passwordinput.errors | json}}</pre>
+</form>
